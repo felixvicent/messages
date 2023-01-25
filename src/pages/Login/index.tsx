@@ -40,6 +40,8 @@ export function Login() {
         });
 
         localStorage.setItem("chatappuser", JSON.stringify(data));
+
+        navigate("/");
       } catch (error) {
         toastError("Não foi possivel o cadastro, tente novamente!");
       }

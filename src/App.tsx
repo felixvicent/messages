@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Chat } from "./pages/Chat";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
+import { SetAvatar } from "./pages/SetAvatar";
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
         <Route path="/" element={<Chat />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/set-avatar" element={<SetAvatar />} />
       </Routes>
     </BrowserRouter>
   );
