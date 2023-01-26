@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ChatContainer } from "../../components/ChatContainer";
 import { Contacts } from "../../components/Contacts";
 import { Welcome } from "../../components/Welcome";
 import { api } from "../../services/api";
@@ -13,6 +14,7 @@ export function Chat() {
   const [currentChat, setCurrentChat] = useState<Contact | undefined>(
     undefined
   );
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const navigate = useNavigate();
 
@@ -22,6 +24,7 @@ export function Chat() {
     } else {
       const storagedUser = localStorage.getItem("chatappuser") || "";
       setCurrentUser(JSON.parse(storagedUser));
+      setIsLoaded(true);
     }
   }, [navigate]);
 
@@ -54,7 +57,11 @@ export function Chat() {
           onChangeChat={handleChatChange}
         />
 
-        <Welcome currentUser={currentUser} />
+        {isLoaded && currentChat ? (
+          <ChatContainer currentChat={currentChat} />
+        ) : (
+          <Welcome currentUser={currentUser} />
+        )}
       </div>
     </S.Container>
   );
