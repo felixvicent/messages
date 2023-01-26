@@ -10,22 +10,6 @@ export const FormContainer = styled.div`
   align-items: center;
   background-color: #131324;
 
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-
-    img {
-      height: 5rem;
-    }
-
-    h1 {
-      color: #fff;
-      text-transform: uppercase;
-    }
-  }
-
   form {
     display: flex;
     flex-direction: column;

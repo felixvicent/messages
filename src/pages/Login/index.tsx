@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import logoImg from "../../assets/logo.svg";
+import { Header } from "../../components/Header";
 import { api } from "../../services/api";
 import { toastError } from "../../utils/toast";
 
@@ -52,11 +52,7 @@ export function Login() {
     <>
       <S.FormContainer>
         <form onSubmit={handleSubmit}>
-          <div className="brand">
-            <img src={logoImg} alt="Snappy" />
-            <h1>snappy</h1>
-          </div>
-
+          <Header />
           <input
             type="text"
             placeholder="Nome de usuário"
