@@ -1,5 +1,7 @@
 import { Contact } from "../../types/Contact";
+import { ChatInput } from "../ChatInput";
 import { Logout } from "../Logout";
+import { Messages } from "../Messages";
 
 import * as S from "./styles";
 
@@ -8,6 +10,10 @@ interface ChatContainerProps {
 }
 
 export function ChatContainer({ currentChat }: ChatContainerProps) {
+  async function handleSendMessage(message: string) {
+    alert(message);
+  }
+
   return (
     <S.Container>
       <div className="chat-header">
@@ -27,8 +33,8 @@ export function ChatContainer({ currentChat }: ChatContainerProps) {
         <Logout />
       </div>
 
-      <div className="chat-messages"></div>
-      <div className="chat-input"></div>
+      <Messages />
+      <ChatInput onSendMessage={handleSendMessage} />
     </S.Container>
   );
 }
