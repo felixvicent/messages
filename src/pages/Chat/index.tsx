@@ -58,7 +58,7 @@ export function Chat() {
         />
 
         {isLoaded && currentChat ? (
-          <ChatContainer currentChat={currentChat} />
+          <ChatContainer currentChat={currentChat} currentUser={currentUser} />
         ) : (
           <Welcome currentUser={currentUser} />
         )}

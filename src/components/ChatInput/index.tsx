@@ -27,6 +27,7 @@ export function ChatInput({ onSendMessage }: ChatInputProps) {
     if (message) {
       onSendMessage(message);
       setMessage("");
+      setShowEmojiPicker(false);
     }
   }
 
